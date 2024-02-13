@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Emoji:wght@300..700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Noto Sans', sans-serif;
+    color: #232323;
+}
+
+.noto-emoji{
+    font-family: "Noto Emoji", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+}
+
+body {
+    background-color: #EFEFEF;
+}
+
+.big-text{
+    font-size: 500%;
+}
+
+.navbar {
+    display: flex;
+    padding: 5px;
+    justify-content: baseline;
+    background-color: #D2D4DB;
+    justify-content: space-between;
+}
+
+.container-of-everything {
+    display: flex;
+    flex-wrap: wrap;
+    flex-flow: row;
+    flex-direction: row;
+    justify-content: space-evenly;
+    padding-top: 5vh;
+    width: 100%;
+    height: fit-content;
+}
+
+.main-game-element {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    flex-flow: column;
+    align-items: center;
+    text-align: center;
+    background-color: #c8c8c8;
+    width: 33.33vw;
+    height: 100%;
+    padding: 10px;
+    border-radius: 12px;
+    border: #D8D8D8 solid 2px;
+}
+
+.answer-form-container{
+    height: 100%;
+}
+
+.answer-form {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    flex-flow: column;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.answer-form input[type='submit'] {
+    background-color: #D2D4DB;
+    margin: 3px;
+    padding: 5px;
+    border-radius: 12px;
+    border: #7FBAD0 2px solid;
+}
+
+.answer-button {
+    background-color: #D2D4DB;
+    width: 80%;
+    height: 22%;
+    padding: 5%;
+    margin: 3px;
+    border-radius: 12px;
+    border: #7FBAD0 2px solid;
+}
+
+.divider{
+    margin: 25px;
+}

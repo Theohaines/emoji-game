@@ -1,0 +1,82 @@
+{
+    "questions": [
+        {
+            "id" : 0,
+            "question" : "What popular saying is this?",
+            "emojis" : "❓ 🔪 🐈",
+            "answers" : [
+                {
+                    "answerA" : "questions killed the cat",
+                    "answerB" : "curiosity killed the cat",
+                    "answerC" : "punctuation stabbed the cat"
+                }
+            ],
+            "answer" : "B"
+        },
+        {
+            "id" : 1,
+            "question" : "What emoji is this?",
+            "emojis" : "🐔",
+            "answers" : [
+                {
+                    "answerA" : "chicken",
+                    "answerB" : "cock",
+                    "answerC" : "rooster"
+                }
+            ],
+            "answer" : "A"
+        },
+        {
+            "id" : 2,
+            "question" : "What am I saying?",
+            "emojis" : "🙎‍♂️ 😠 ⏱",
+            "answers" : [
+                {
+                    "answerA" : "I'm angry all the time",
+                    "answerB" : "I hate clocks",
+                    "answerC" : "I hate how slow time is going"
+                }
+            ],
+            "answer" : "A"
+        },
+        {
+            "id" : 3,
+            "question" : "What movie is this?",
+            "emojis" : "🌎🦍🦧",
+            "answers" : [
+                {
+                    "answerA" : "Apes in space",
+                    "answerB" : "Space chimps",
+                    "answerC" : "Planet of the apes"
+                }
+            ],
+            "answer" : "C"
+        },
+        {
+            "id" : 4,
+            "question" : "What emoji is this?",
+            "emojis" : "👞",
+            "answers" : [
+                {
+                    "answerA" : "shoe",
+                    "answerB" : "dress shoe",
+                    "answerC" : "brown shoe"
+                }
+            ],
+            "answer" : "B"
+        },
+        {
+            "id" : 5,
+            "question" : "What time is on this clock?",
+            "emojis" : "🕟",
+            "answers" : [
+                {
+                    "answerA" : "five thirty",
+                    "answerB" : "six forty five",
+                    "answerC" : "four thirty"
+                }
+            ],
+            "answer" : "C"
+        }
+    ]
+}

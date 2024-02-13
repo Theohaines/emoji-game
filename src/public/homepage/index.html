@@ -1,0 +1,47 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emoji game</title>
+
+    <link rel="stylesheet" href="/homepage/css/index.css">
+</head>
+<body>
+    <div class="navbar">
+        <h1>Emoji game</h1>
+        <h1>By Theo Haines</h1>
+    </div>
+
+    <div class="container-of-everything">
+        <div class="main-game-element">
+            <h1 id="questionText">[QUESTION]</h1>
+            <div class="divider"></div>
+            <h1 id="emojiText" class="big-text noto-emoji">😀</h1>
+
+            <div class="divider"></div>
+
+            <h3 id="scoreText">score: 0</h3>
+            <h3 id="livesText">❤️ ❤️ ❤️</h3>
+        </div>
+
+        <div class="main-game-element answer-form-container">
+            <h1>ANSWERS</h1>
+            <form class="answer-form" id="answerForm" action="sumbitanswer" method="post">
+                <div class="answer-button" onclick="submitAnswer('A')">
+                    <h1 id="answerA">A</h1>
+                </div>
+                <div class="answer-button" onclick="submitAnswer('B')">
+                    <h1 id="answerB">B</h1>
+                </div>
+                <div class="answer-button" onclick="submitAnswer('C')">
+                    <h1 id="answerC">C</h1>
+                </div>
+            </form>
+
+            <!--<button onclick="getNewQuestion()">get new question</button>-->
+        </div>
+    </div>
+
+    <script src="/homepage/scripts/index.js"></script>
+</body>
+</html>
