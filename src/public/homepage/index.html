@@ -25,8 +25,7 @@
         </div>
 
         <div class="main-game-element answer-form-container">
-            <h1>ANSWERS</h1>
-            <form class="answer-form" id="answerForm" action="sumbitanswer" method="post">
+            <form class="answer-form" id="multiAnswerForm">
                 <div class="answer-button" onclick="submitAnswer('A')">
                     <h1 id="answerA">A</h1>
                 </div>
@@ -37,6 +36,11 @@
                     <h1 id="answerC">C</h1>
                 </div>
             </form>
+
+            <div class="answer-form" id="textAnswerForm">
+                <input type="text" placeholder="Type your answer here..." id="textAnswerInput" minlength="1" maxlength="40" required>
+                <button onclick="submitAnswer('')">submit answer</button>
+            </div>
 
             <!--<button onclick="getNewQuestion()">get new question</button>-->
         </div>

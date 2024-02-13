@@ -27,12 +27,13 @@ app.get("/", async (req, res) => {
 app.use('/getquestion', (req, res) => {
     var questionJSON = questions.questions[Math.floor(Math.random() * questions.questions.length)];
 
-    var id = questionJSON.id;
+    var id = questions.questions.indexOf(questionJSON);
     var question  = questionJSON.question;
     var emojis = questionJSON.emojis;
     var answers = questionJSON.answers;
+	var type = questionJSON.type;
     res.setHeader('Content-Type', 'application/json');
-    res.end(JSON.stringify({id, question, emojis, answers}));
+    res.end(JSON.stringify({id, question, emojis, answers, type}));
 });
 
 app.use('/submitanswer', (req, res) => {
@@ -44,7 +45,7 @@ app.use('/submitanswer', (req, res) => {
 
 	var question = questions.questions[req.body.id];
 
-	if (question.answer == req.body.answer) {
+	if (question.answer.toLowerCase() == req.body.answer.toLowerCase()) {
 		res.send(JSON.stringify({"response" : "answer", "answer" : "true"}));
 	} else {
 		res.send(JSON.stringify({"response" : "answer", "answer" : "false"}));
@@ -52,12 +53,14 @@ app.use('/submitanswer', (req, res) => {
 });
 
 function validateAnswer(req){
-	if (req.body.answer == "A" || req.body.answer == "B" || req.body.answer == "C"){
+	if (req.body.answer == "A" || req.body.answer == "B" || req.body.answer == "C" && questions.questions[req.body.id].type == "multi"){
 		if (req.body.id >= 0 && req.body.id < questions.questions.length){
 			return true;
 		} else {
 			return false; 
 		}
+	} else if (questions.questions[req.body.id].type == "text"){
+		return true;
 	} else {
 		return false;
 	}

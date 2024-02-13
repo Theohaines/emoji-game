@@ -71,10 +71,22 @@ body {
     flex-wrap: wrap;
 }
 
-.answer-form input[type='submit'] {
+.answer-form button{
     background-color: #D2D4DB;
     margin: 3px;
     padding: 5px;
+    border-radius: 12px;
+    border: #7FBAD0 2px solid;
+}
+
+.answer-form input[type="text"] {
+    background-color: #D2D4DB;
+    font-size: large;
+    word-wrap: break-word;
+    width: 80%;
+    height: 22%;
+    padding: 5%;
+    margin: 3px;
     border-radius: 12px;
     border: #7FBAD0 2px solid;
 }
@@ -91,4 +103,30 @@ body {
 
 .divider{
     margin: 25px;
+}
+
+@media only screen and (max-width: 600px) {
+    .container-of-everything {
+        flex-flow: column;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .main-game-element{
+        width: 90vw;
+    }
+
+    .answer-form {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        flex-flow: column;
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
+
+    .navbar{
+        font-size: small;
+    }
 }

@@ -1,95 +1,264 @@
 {
     "questions": [
         {
-            "id" : 0,
+            "type" : "text",
             "question" : "What popular saying is this?",
             "emojis" : "❓ 🔪 🐈",
             "answers" : [
                 {
-                    "answerA" : "questions killed the cat",
-                    "answerB" : "curiosity killed the cat",
-                    "answerC" : "punctuation stabbed the cat"
+                    "answerA" : "",
+                    "answerB" : "",
+                    "answerC" : ""
                 }
             ],
-            "answer" : "B"
+            "answer" : "curiosity killed the cat"
         },
         {
-            "id" : 1,
+            "type" : "multi",
             "question" : "What emoji is this?",
-            "emojis" : "🐔",
+            "emojis" : "🧳",
             "answers" : [
                 {
-                    "answerA" : "chicken",
-                    "answerB" : "cock",
-                    "answerC" : "rooster"
+                    "answerA" : "breifcase",
+                    "answerB" : "luggage",
+                    "answerC" : "suitcase"
                 }
             ],
-            "answer" : "A"
+            "answer" : "b"
         },
         {
-            "id" : 2,
-            "question" : "What am I saying?",
-            "emojis" : "🙎‍♂️ 😠 ⏱",
+            "type" : "multi",
+            "question" : "What emoji is this?",
+            "emojis" : "⚙️",
             "answers" : [
                 {
-                    "answerA" : "I'm angry all the time",
-                    "answerB" : "I hate clocks",
-                    "answerC" : "I hate how slow time is going"
+                    "answerA" : "gear",
+                    "answerB" : "cog",
+                    "answerC" : "wheel"
                 }
             ],
-            "answer" : "A"
+            "answer" : "a"
         },
         {
-            "id" : 3,
+            "type" : "multi",
+            "question" : "What emoji is this?",
+            "emojis" : "⚗️",
+            "answers" : [
+                {
+                    "answerA" : "flask",
+                    "answerB" : "beaker",
+                    "answerC" : "alembic"
+                }
+            ],
+            "answer" : "c"
+        },
+        {
+            "type" : "text",
             "question" : "What movie is this?",
-            "emojis" : "🌎🦍🦧",
+            "emojis" : "🌍🦧🦍",
             "answers" : [
                 {
-                    "answerA" : "Apes in space",
-                    "answerB" : "Space chimps",
-                    "answerC" : "Planet of the apes"
+                    "answerA" : "",
+                    "answerB" : "",
+                    "answerC" : ""
                 }
             ],
-            "answer" : "C"
+            "answer" : "planet of the apes"
         },
         {
-            "id" : 4,
+            "type" : "text",
+            "question" : "What movie is this?",
+            "emojis" : "🐍🐅📖",
+            "answers" : [
+                {
+                    "answerA" : "",
+                    "answerB" : "",
+                    "answerC" : ""
+                }
+            ],
+            "answer" : "the jungle book"
+        },
+        {
+            "type" : "text",
+            "question" : "What movie is this?",
+            "emojis" : "📞💀🔪",
+            "answers" : [
+                {
+                    "answerA" : "",
+                    "answerB" : "",
+                    "answerC" : ""
+                }
+            ],
+            "answer" : "scream"
+        },
+        {
+            "type" : "text",
+            "question" : "What does this depict?",
+            "emojis" : "💸 🤗",
+            "answers" : [
+                {
+                    "answerA" : "",
+                    "answerB" : "",
+                    "answerC" : ""
+                }
+            ],
+            "answer" : "paypal"
+        },
+        {
+            "type" : "multi",
             "question" : "What emoji is this?",
-            "emojis" : "👞",
+            "emojis" : "👹",
             "answers" : [
                 {
-                    "answerA" : "shoe",
-                    "answerB" : "dress shoe",
-                    "answerC" : "brown shoe"
+                    "answerA" : "devil",
+                    "answerB" : "ogre",
+                    "answerC" : "jester"
                 }
             ],
-            "answer" : "B"
+            "answer" : "b"
         },
         {
-            "id" : 5,
-            "question" : "What time is on this clock?",
-            "emojis" : "🕟",
+            "type" : "multi",
+            "question" : "What emoji is this?",
+            "emojis" : "🐽",
             "answers" : [
                 {
-                    "answerA" : "five thirty",
-                    "answerB" : "six forty five",
-                    "answerC" : "four thirty"
+                    "answerA" : "pig snout",
+                    "answerB" : "pig nose",
+                    "answerC" : "animal snout"
                 }
             ],
-            "answer" : "C"
+            "answer" : "b"
         },
         {
-            "id" : 6,
-            "question" : "What star sign is this?",
-            "emojis" : "♋️",
+            "type" : "text",
+            "question" : "What movie is this?",
+            "emojis" : "🐳➡️🌊",
             "answers" : [
                 {
-                    "answerA" : "cancer",
-                    "answerB" : "gemini",
-                    "answerC" : "pisces"
+                    "answerA" : "",
+                    "answerB" : "",
+                    "answerC" : ""
                 }
             ],
-            "answer" : "A"
+            "answer" : "free willy"
+        },
+        {
+            "type" : "text",
+            "question" : "What movie is this?",
+            "emojis" : "✏️📓👩‍❤️‍👨",
+            "answers" : [
+                {
+                    "answerA" : "",
+                    "answerB" : "",
+                    "answerC" : ""
+                }
+            ],
+            "answer" : "the notebook"
+        },
+        {
+            "type" : "text",
+            "question" : "What movie is this?",
+            "emojis" : "🦁🤴",
+            "answers" : [
+                {
+                    "answerA" : "",
+                    "answerB" : "",
+                    "answerC" : ""
+                }
+            ],
+            "answer" : "the lion king"
+        },
+        {
+            "type" : "text",
+            "question" : "What movie is this?",
+            "emojis" : "🎈👴🏠",
+            "answers" : [
+                {
+                    "answerA" : "",
+                    "answerB" : "",
+                    "answerC" : ""
+                }
+            ],
+            "answer" : "up"
+        },
+        {
+            "type" : "text",
+            "question" : "What movie series is this?",
+            "emojis" : "🤵🍸🔫",
+            "answers" : [
+                {
+                    "answerA" : "",
+                    "answerB" : "",
+                    "answerC" : ""
+                }
+            ],
+            "answer" : "james bond"
+        },
+        {
+            "type" : "text",
+            "question" : "What movie is this?",
+            "emojis" : "🏃‍♂️ 🌲🌳 🏃‍♂️",
+            "answers" : [
+                {
+                    "answerA" : "",
+                    "answerB" : "",
+                    "answerC" : ""
+                }
+            ],
+            "answer" : "forest gump"
+        },
+        {
+            "type" : "text",
+            "question" : "What movie series is this?",
+            "emojis" : "🦇🃏",
+            "answers" : [
+                {
+                    "answerA" : "",
+                    "answerB" : "",
+                    "answerC" : ""
+                }
+            ],
+            "answer" : "batman"
+        },
+        {
+            "type" : "text",
+            "question" : "What movie series is this?",
+            "emojis" : "👩🧛🐺",
+            "answers" : [
+                {
+                    "answerA" : "",
+                    "answerB" : "",
+                    "answerC" : ""
+                }
+            ],
+            "answer" : "twilight"
+        },
+        {
+            "type" : "text",
+            "question" : "What movie is this?",
+            "emojis" : "❄️🛳👩‍❤️‍👨🚪",
+            "answers" : [
+                {
+                    "answerA" : "",
+                    "answerB" : "",
+                    "answerC" : ""
+                }
+            ],
+            "answer" : "titanic"
+        },
+        {
+            "type" : "multi",
+            "question" : "What emoji is this?",
+            "emojis" : "🌓",
+            "answers" : [
+                {
+                    "answerA" : "last quarter moon",
+                    "answerB" : "half moon",
+                    "answerC" : "first quarter moon"
+                }
+            ],
+            "answer" : "c"
         }
     ]
 }

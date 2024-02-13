@@ -1,6 +1,3 @@
-const answerForm = document.getElementById('answerForm');
-const answerInput = document.getElementById('answerInput');
-
 //Question stuff
 const answerA = document.getElementById("answerA");
 const answerB = document.getElementById("answerB");
@@ -8,12 +5,18 @@ const answerC = document.getElementById("answerC");
 const questionText = document.getElementById("questionText");
 const emojiText = document.getElementById("emojiText");
 let currentQuestionID = 0;
+let currentQuestionType = "";
 
 //Score stuff
 let lives = 3;
 let score = 0;
 const livestext = document.getElementById("livesText");
 const scoretext = document.getElementById("scoreText");
+
+//Answer stuff
+const multiAnswerForm = document.getElementById("multiAnswerForm");
+const textAnswerForm = document.getElementById("textAnswerForm");
+const textAnswerInput = document.getElementById("textAnswerInput");
 
 //Misc stuff
 let gamestatus = true;
@@ -31,10 +34,19 @@ function loadNewQuestion(data){
     var questionJSON = data;
 
     currentQuestionID = questionJSON.id;
+    currentQuestionType = questionJSON.type;
 
-    answerA.textContent = "A: " + questionJSON.answers[0].answerA;
-    answerB.textContent = "B: " + questionJSON.answers[0].answerB;
-    answerC.textContent = "C: " + questionJSON.answers[0].answerC;
+    if(questionJSON.type == "multi"){
+        multiAnswerForm.style.display = "flex";
+        textAnswerForm.style.display = "none";
+        answerA.textContent = "A: " + questionJSON.answers[0].answerA;
+        answerB.textContent = "B: " + questionJSON.answers[0].answerB;
+        answerC.textContent = "C: " + questionJSON.answers[0].answerC;
+    } else if (questionJSON.type == "text"){
+        multiAnswerForm.style.display = "none";
+        textAnswerForm.style.display = "flex";
+    }
+
     questionText.textContent = questionJSON.question;
     emojiText.textContent = questionJSON.emojis;
 }
@@ -42,6 +54,10 @@ function loadNewQuestion(data){
 function submitAnswer(answer){
     if (gamestatus == false){
         location.reload();
+    }
+
+    if (currentQuestionType == "text"){
+        answer = textAnswerInput.value;
     }
 
     JSON.stringify(answer, currentQuestionID);
@@ -103,4 +119,20 @@ function gameover(){
     answerC.textContent = "press to restart";
 }
 
-getNewQuestion();
+function toggleElementVisibility(elementid){
+    var element = document.getElementById(elementid);
+
+    if (element.style.display != "none"){
+        element.style.display = "none";
+    } else {
+        element.style.display = "flex";
+    }
+}
+
+function initialise(){
+    multiAnswerForm.style.display = "none";
+    textAnswerForm.style.display = "none";
+    getNewQuestion();
+}
+
+initialise();
