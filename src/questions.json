@@ -77,6 +77,19 @@
                 }
             ],
             "answer" : "C"
+        },
+        {
+            "id" : 6,
+            "question" : "What star sign is this?",
+            "emojis" : "♋️",
+            "answers" : [
+                {
+                    "answerA" : "cancer",
+                    "answerB" : "gemini",
+                    "answerC" : "pisces"
+                }
+            ],
+            "answer" : "A"
         }
     ]
 }
