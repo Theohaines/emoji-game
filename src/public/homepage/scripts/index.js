@@ -7,10 +7,25 @@ const emojiText = document.getElementById("emojiText");
 let currentQuestionID = 0;
 let currentQuestionType = "";
 
+//Radio stuff
+const radioOne = document.getElementById("radioOne");
+const radioTwo = document.getElementById("radioTwo");
+const radioThree = document.getElementById("radioThree");
+const radioFour = document.getElementById("radioFour");
+const radioFive = document.getElementById("radioFive");
+//text
+const radioA = document.getElementById("radioA");
+const radioB = document.getElementById("radioB");
+const radioC = document.getElementById("radioC");
+const radioD = document.getElementById("radioD");
+const radioE = document.getElementById("radioE");
+
 //Score stuff
 let lives = 3;
 let score = 0;
-let timer = 0;
+const timerDefault = 500;
+let timer;
+let timerInterval = 200;
 const livestext = document.getElementById("livesText");
 const scoretext = document.getElementById("scoreText");
 
@@ -25,6 +40,7 @@ const incorrectSFX = new Audio("/media/incorrectSFX.wav");
 
 //Misc stuff
 let gamestatus = true;
+let holdAnswer = 0;
 
 function getNewQuestion(){
     fetch('/getquestion').then((response) => {
@@ -33,6 +49,7 @@ function getNewQuestion(){
             loadNewQuestion(data);
         });
     });
+    resetTimer();
 }
 
 function loadNewQuestion(data){
@@ -50,6 +67,12 @@ function loadNewQuestion(data){
     } else if (questionJSON.type == "text"){
         multiAnswerForm.style.display = "none";
         textAnswerForm.style.display = "flex";
+    } else if (questionJSON.type == "radio") {
+        radioA.textContent = "1. " + questionJSON.answers[0].answerA;
+        radioB.textContent = "2. " + questionJSON.answers[0].answerB;
+        radioC.textContent = "3. " + questionJSON.answers[0].answerC;
+        radioD.textContent = "4. " + questionJSON.answers[0].answerD;
+        radioE.textContent = "5. " + questionJSON.answers[0].answerE;
     }
 
     questionText.textContent = questionJSON.question;
@@ -64,6 +87,11 @@ function submitAnswer(answer){
     if (currentQuestionType == "text"){
         answer = textAnswerInput.value;
         textAnswerInput.value = "";
+    }
+
+    if (currentQuestionType == "radio"){
+        answer = holdAnswer;
+        holdAnswer = 0;
     }
 
     JSON.stringify(answer, currentQuestionID);
@@ -85,8 +113,9 @@ function submitAnswer(answer){
                 incorrectSFX.play();
                 updateLivesCounter();
             } else if (responseJSON.answer == "true") {
-                score = score + 200;
+                score = score + 1000;
                 correctSFX.play();
+                queryTimer();
                 updateScore();
             } else {
                 lives = 0;
@@ -98,6 +127,25 @@ function submitAnswer(answer){
             }
         });
     });
+}
+
+function toggleRadio(id, ref){
+    var element = document.getElementById(id);
+    if (element.style.backgroundColor == "rgb(210, 212, 219)"){
+        element.style.backgroundColor = "#666666";
+        holdAnswer -= ref;
+    } else {
+        element.style.backgroundColor = "rgb(210, 212, 219)";
+        holdAnswer -= ref;
+    }
+}
+
+function resetRadio(){
+    radioOne.style.backgroundColor = "#D2D4DB";
+    radioTwo.style.backgroundColor = "#D2D4DB";
+    radioThree.style.backgroundColor = "#D2D4DB";
+    radioFour.style.backgroundColor = "#D2D4DB";
+    radioFive.style.backgroundColor = "#D2D4DB";
 }
 
 function updateScore(){
@@ -115,6 +163,23 @@ function updateLivesCounter(){
         livestext.innerText = "💔 💔 💔";
         gamestatus = false;
         gameover();
+    }
+}
+
+function startTimer(){
+    var x = setInterval(function() {
+        timer = timer - 10;
+        console.log(timer.toString());
+    }, timerInterval);
+}
+
+function resetTimer(){
+    timer = timerDefault;
+}
+
+function queryTimer(){
+    if (timer >= 0) {
+        score += timer;
     }
 }
 
@@ -141,6 +206,7 @@ function initialise(){
     multiAnswerForm.style.display = "none";
     textAnswerForm.style.display = "none";
     getNewQuestion();
+    startTimer();
 }
 
 initialise();

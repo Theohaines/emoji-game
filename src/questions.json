@@ -363,6 +363,34 @@
                 }
             ],
             "answer" : "a"
+        },
+        {
+            "type" : "text",
+            "question" : "What movie is this?",
+            "emojis" : "🌹🥀",
+            "answers" : [
+                {
+                    "answerA" : "",
+                    "answerB" : "",
+                    "answerC" : ""
+                }
+            ],
+            "answer" : "beauty and the beast"
+        },
+        {
+            "type" : "radio",
+            "question" : "Select emojis with bubble in their name.",
+            "emojis" : "",
+            "answers" : [
+                {
+                    "answerA" : "👁️‍🗨️",
+                    "answerB" : "🗨️",
+                    "answerC" : "💬",
+                    "answerD" : "💭",
+                    "answerE" : "🗯️"
+                }
+            ],
+            "answer" : "8"
         }
     ]
 }

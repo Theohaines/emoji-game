@@ -28,7 +28,11 @@ app.use('/getquestion', (req, res) => {
     var id = questions.questions.indexOf(questionJSON);
     var question  = questionJSON.question;
     var emojis = questionJSON.emojis;
-    var answers = questionJSON.answers;
+	if (questionJSON.type == "multi"){
+		var answers = questionJSON.answers;
+	} else if (questionJSON.type == "radio") {
+		var answers = questionJSON.answers;
+	}
 	var type = questionJSON.type;
     res.setHeader('Content-Type', 'application/json');
     res.end(JSON.stringify({id, question, emojis, answers, type}));
@@ -43,10 +47,18 @@ app.use('/submitanswer', (req, res) => {
 
 	var question = questions.questions[req.body.id];
 
-	if (question.answer.toLowerCase() == req.body.answer.toLowerCase()) {
-		res.send(JSON.stringify({"response" : "answer", "answer" : "true"}));
+	if (questions.questions[req.body.id].type == "radio"){
+		if (question.answer == req.body.answer) {
+			res.send(JSON.stringify({"response" : "answer", "answer" : "true"}));
+		} else {
+			res.send(JSON.stringify({"response" : "answer", "answer" : "false"}));
+		}
 	} else {
-		res.send(JSON.stringify({"response" : "answer", "answer" : "false"}));
+		if (question.answer.toLowerCase() == req.body.answer.toLowerCase()) {
+			res.send(JSON.stringify({"response" : "answer", "answer" : "true"}));
+		} else {
+			res.send(JSON.stringify({"response" : "answer", "answer" : "false"}));
+		}
 	}
 });
 
@@ -58,6 +70,8 @@ function validateAnswer(req){
 			return false; 
 		}
 	} else if (questions.questions[req.body.id].type == "text"){
+		return true;
+	} else if (questions.questions[req.body.id].type == "radio"){
 		return true;
 	} else {
 		return false;
