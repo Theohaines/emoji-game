@@ -10,6 +10,7 @@ let currentQuestionType = "";
 //Score stuff
 let lives = 3;
 let score = 0;
+let timer = 0;
 const livestext = document.getElementById("livesText");
 const scoretext = document.getElementById("scoreText");
 
