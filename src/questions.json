@@ -259,6 +259,110 @@
                 }
             ],
             "answer" : "c"
+        },
+        {
+            "type" : "multi",
+            "question" : "What emoji is this?",
+            "emojis" : "🫦",
+            "answers" : [
+                {
+                    "answerA" : "lip bite",
+                    "answerB" : "lip biting",
+                    "answerC" : "biting lip"
+                }
+            ],
+            "answer" : "c"
+        },
+        {
+            "type" : "multi",
+            "question" : "What emoji is this?",
+            "emojis" : "🦠",
+            "answers" : [
+                {
+                    "answerA" : "bacteria",
+                    "answerB" : "Microbe",
+                    "answerC" : "amoebae"
+                }
+            ],
+            "answer" : "b"
+        },
+        {
+            "type" : "multi",
+            "question" : "What emoji is this?",
+            "emojis" : "🦠",
+            "answers" : [
+                {
+                    "answerA" : "bacteria",
+                    "answerB" : "Microbe",
+                    "answerC" : "amoebae"
+                }
+            ],
+            "answer" : "b"
+        },
+        {
+            "type" : "multi",
+            "question" : "What emoji is this?",
+            "emojis" : "🤺",
+            "answers" : [
+                {
+                    "answerA" : "person fencing",
+                    "answerB" : "fencer",
+                    "answerC" : "fencing sport"
+                }
+            ],
+            "answer" : "a"
+        },
+        {
+            "type" : "multi",
+            "question" : "What emoji is this?",
+            "emojis" : "🕴️",
+            "answers" : [
+                {
+                    "answerA" : "person in suit levitating",
+                    "answerB" : "man in suit levitating",
+                    "answerC" : "guy in suit floating"
+                }
+            ],
+            "answer" : "a"
+        },
+        {
+            "type" : "text",
+            "question" : "What tv series is this?",
+            "emojis" : "👩‍🦲⚗️💎",
+            "answers" : [
+                {
+                    "answerA" : "",
+                    "answerB" : "",
+                    "answerC" : ""
+                }
+            ],
+            "answer" : "breaking bad"
+        },
+        {
+            "type" : "multi",
+            "question" : "What emoji is this?",
+            "emojis" : "📯",
+            "answers" : [
+                {
+                    "answerA" : "fog horn",
+                    "answerB" : "post horn",
+                    "answerC" : "french tuba"
+                }
+            ],
+            "answer" : "b"
+        },
+        {
+            "type" : "multi",
+            "question" : "Which is the most used emoji?",
+            "emojis" : "😂 ❤️ 💩",
+            "answers" : [
+                {
+                    "answerA" : "😂",
+                    "answerB" : "❤️",
+                    "answerC" : "💩"
+                }
+            ],
+            "answer" : "a"
         }
     ]
 }

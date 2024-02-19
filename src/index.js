@@ -5,8 +5,6 @@ const bodyParser = require('body-parser');
 const fs = require('fs');
 
 const questions = require('./questions.json');
-const { debug } = require("console");
-
 const app = express();
 
 app.use(bodyParser.json());

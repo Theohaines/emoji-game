@@ -31,6 +31,13 @@ body {
     justify-content: space-between;
 }
 
+.donation-banner {
+    text-align: center;
+    width: 100%;
+    background-color: #b7b7b7;
+    color: white;
+}
+
 .container-of-everything {
     display: flex;
     flex-wrap: wrap;
@@ -79,6 +86,14 @@ body {
     border: #7FBAD0 2px solid;
 }
 
+.small-button {
+    background-color: #D2D4DB;
+    margin: 3px;
+    padding: 5px;
+    border-radius: 12px;
+    border: #7FBAD0 2px solid;
+}
+
 .answer-form input[type="text"] {
     background-color: #D2D4DB;
     font-size: large;
@@ -91,7 +106,7 @@ body {
     border: #7FBAD0 2px solid;
 }
 
-.answer-button {
+.div-button {
     background-color: #D2D4DB;
     width: 80%;
     height: 22%;
@@ -101,7 +116,11 @@ body {
     border: #7FBAD0 2px solid;
 }
 
-.divider{
+.option-container {
+    display: none;
+}
+
+.divider {
     margin: 25px;
 }
 

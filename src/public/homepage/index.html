@@ -9,7 +9,11 @@
 <body>
     <div class="navbar">
         <h1>Emoji game</h1>
-        <h1>By Theo Haines</h1>
+        <button class="noto-emoji small-button" onclick="toggleElementVisibility('optionContainer'); toggleElementVisibility('answerFormContainer')">options ⚙️</button>
+    </div>
+
+    <div class="donation-banner">
+        <p>Please consider donating so I can keep these games ad free! <a href="https://ko-fi.com/theohaines">Donate here.</a></p>
     </div>
 
     <div class="container-of-everything">
@@ -21,19 +25,19 @@
             <div class="divider"></div>
 
             <h3 id="scoreText">score: 0</h3>
-            <h3 id="livesText">❤️ ❤️ ❤️</h3>
+            <h3 class="noto-emoji" id="livesText">❤️ ❤️ ❤️</h3>
         </div>
 
-        <div class="main-game-element answer-form-container">
+        <div class="main-game-element answer-form-container" id="answerFormContainer">
             <form class="answer-form" id="multiAnswerForm">
-                <div class="answer-button" onclick="submitAnswer('A')">
-                    <h1 id="answerA">A</h1>
+                <div class="div-button" onclick="submitAnswer('A')">
+                    <h1 class="noto-emoji" id="answerA">A</h1>
                 </div>
-                <div class="answer-button" onclick="submitAnswer('B')">
-                    <h1 id="answerB">B</h1>
+                <div class="div-button" onclick="submitAnswer('B')">
+                    <h1 class="noto-emoji" id="answerB">B</h1>
                 </div>
-                <div class="answer-button" onclick="submitAnswer('C')">
-                    <h1 id="answerC">C</h1>
+                <div class="div-button" onclick="submitAnswer('C')">
+                    <h1 class="noto-emoji" id="answerC">C</h1>
                 </div>
             </form>
 
@@ -44,7 +48,20 @@
 
             <!--<button onclick="getNewQuestion()">get new question</button>-->
         </div>
+        
+        <div class="main-game-element option-container" id="optionContainer">
+            <div class="div-button">
+                <h1>sound effects: 🔊</h1>
+            </div>
+            <div class="div-button">
+                <h1>music: 🔊</h1>
+            </div>
+            <div class="div-button">
+                <h1>By theohaines @ <a href="https://theohaines.xyz">theohaines.xyz</a></h1>
+            </div>
+        </div>
     </div>
+    
 
     <script src="/homepage/scripts/index.js"></script>
 </body>

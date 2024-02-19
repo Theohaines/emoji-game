@@ -18,6 +18,10 @@ const multiAnswerForm = document.getElementById("multiAnswerForm");
 const textAnswerForm = document.getElementById("textAnswerForm");
 const textAnswerInput = document.getElementById("textAnswerInput");
 
+//SFX stuff
+const correctSFX = new Audio("/media/correctSFX.wav");
+const incorrectSFX = new Audio("/media/incorrectSFX.wav");
+
 //Misc stuff
 let gamestatus = true;
 
@@ -58,6 +62,7 @@ function submitAnswer(answer){
 
     if (currentQuestionType == "text"){
         answer = textAnswerInput.value;
+        textAnswerInput.value = "";
     }
 
     JSON.stringify(answer, currentQuestionID);
@@ -76,9 +81,11 @@ function submitAnswer(answer){
         
             if (responseJSON.answer == "false"){
                 lives = lives - 1;
+                incorrectSFX.play();
                 updateLivesCounter();
             } else if (responseJSON.answer == "true") {
                 score = score + 200;
+                correctSFX.play();
                 updateScore();
             } else {
                 lives = 0;
