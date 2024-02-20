@@ -33,6 +33,7 @@ const scoretext = document.getElementById("scoreText");
 const multiAnswerForm = document.getElementById("multiAnswerForm");
 const textAnswerForm = document.getElementById("textAnswerForm");
 const textAnswerInput = document.getElementById("textAnswerInput");
+const radioAnswerForm = document.getElementById("radioAnswerForm");
 
 //SFX stuff
 const correctSFX = new Audio("/media/correctSFX.wav");
@@ -41,6 +42,8 @@ const incorrectSFX = new Audio("/media/incorrectSFX.wav");
 //Misc stuff
 let gamestatus = true;
 let holdAnswer = 0;
+let sfxIsMuted = localStorage.getItem("sfxMuted");
+const sfxToggleText = document.getElementById("sfxToggleText");
 
 function getNewQuestion(){
     fetch('/getquestion').then((response) => {
@@ -61,13 +64,18 @@ function loadNewQuestion(data){
     if(questionJSON.type == "multi"){
         multiAnswerForm.style.display = "flex";
         textAnswerForm.style.display = "none";
+        radioAnswerForm.style.display = "none";
         answerA.textContent = "A: " + questionJSON.answers[0].answerA;
         answerB.textContent = "B: " + questionJSON.answers[0].answerB;
         answerC.textContent = "C: " + questionJSON.answers[0].answerC;
     } else if (questionJSON.type == "text"){
         multiAnswerForm.style.display = "none";
         textAnswerForm.style.display = "flex";
+        radioAnswerForm.style.display = "none";
     } else if (questionJSON.type == "radio") {
+        multiAnswerForm.style.display = "none";
+        textAnswerForm.style.display = "none";
+        radioAnswerForm.style.display = "flex";
         radioA.textContent = "1. " + questionJSON.answers[0].answerA;
         radioB.textContent = "2. " + questionJSON.answers[0].answerB;
         radioC.textContent = "3. " + questionJSON.answers[0].answerC;
@@ -110,11 +118,15 @@ function submitAnswer(answer){
         
             if (responseJSON.answer == "false"){
                 lives = lives - 1;
-                incorrectSFX.play();
+                if (sfxIsMuted == false){
+                    incorrectSFX.play();
+                }
                 updateLivesCounter();
             } else if (responseJSON.answer == "true") {
                 score = score + 1000;
-                correctSFX.play();
+                if (sfxIsMuted == false){
+                    correctSFX.play();
+                }
                 queryTimer();
                 updateScore();
             } else {
@@ -125,6 +137,8 @@ function submitAnswer(answer){
             if (gamestatus == true){
                 getNewQuestion();
             }
+
+            resetRadio();
         });
     });
 }
@@ -133,11 +147,13 @@ function toggleRadio(id, ref){
     var element = document.getElementById(id);
     if (element.style.backgroundColor == "rgb(210, 212, 219)"){
         element.style.backgroundColor = "#666666";
-        holdAnswer -= ref;
+        holdAnswer += ref;
     } else {
         element.style.backgroundColor = "rgb(210, 212, 219)";
         holdAnswer -= ref;
     }
+
+    console.log(holdAnswer.toString());
 }
 
 function resetRadio(){
@@ -169,7 +185,6 @@ function updateLivesCounter(){
 function startTimer(){
     var x = setInterval(function() {
         timer = timer - 10;
-        console.log(timer.toString());
     }, timerInterval);
 }
 
@@ -202,9 +217,22 @@ function toggleElementVisibility(elementid){
     }
 }
 
+function toggleSfxMute(){
+    if(localStorage.getItem("sfxMuted")){
+        console.log("flase")
+        localStorage.setItem("sfxMuted", false);
+        sfxIsMuted = false;
+    } else {
+        console.log("tre")
+        localStorage.setItem("sfxMuted", true);
+        sfxIsMuted = true;
+    }
+}
+
 function initialise(){
     multiAnswerForm.style.display = "none";
     textAnswerForm.style.display = "none";
+    radioAnswerForm.style.display = "none";
     getNewQuestion();
     startTimer();
 }

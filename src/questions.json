@@ -391,6 +391,21 @@
                 }
             ],
             "answer" : "8"
+        },
+        {
+            "type" : "radio",
+            "question" : "Select emojis which start with 'man'.",
+            "emojis" : "",
+            "answers" : [
+                {
+                    "answerA" : "👰‍♂️",
+                    "answerB" : "🧏‍♂️",
+                    "answerC" : "🧕",
+                    "answerD" : "👳‍♂️",
+                    "answerE" : "👨‍🎨"
+                }
+            ],
+            "answer" : "10"
         }
     ]
 }
