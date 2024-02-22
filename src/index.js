@@ -46,9 +46,10 @@ app.use('/submitanswer', (req, res) => {
     }
 
 	var question = questions.questions[req.body.id];
+	console.log(req.body);
 
 	if (questions.questions[req.body.id].type == "radio"){
-		if (question.answer == req.body.answer) {
+		if(haveSameContents(req.body.answer, questions.questions[req.body.id].answer)){
 			res.send(JSON.stringify({"response" : "answer", "answer" : "true"}));
 		} else {
 			res.send(JSON.stringify({"response" : "answer", "answer" : "false"}));
@@ -77,6 +78,13 @@ function validateAnswer(req){
 		return false;
 	}
 }
+
+var haveSameContents = (a, b) => {
+	for (const v of new Set([...a, ...b]))
+	  if (a.filter(e => e === v).length !== b.filter(e => e === v).length)
+		return false;
+	return true;
+};
 
 app.listen(process.env.PORT, () => {
     console.log('listening on port: ', process.env.PORT);

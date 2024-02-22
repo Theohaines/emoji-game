@@ -379,8 +379,53 @@
         },
         {
             "type" : "radio",
+            "question" : "Select emojis that released in 2019",
+            "emojis" : "👅 🥴 🐕‍🦺 🧎‍♂️ 🦮",
+            "answers" : [
+                {
+                    "answerA" : "👅",
+                    "answerB" : "🥴",
+                    "answerC" : "🐕‍🦺",
+                    "answerD" : "🧎‍♂️",
+                    "answerE" : "🦮"
+                }
+            ],
+            "answer" : ["c", "d", "e"]
+        },
+        {
+            "type" : "radio",
+            "question" : "Select emojis that released in 2019",
+            "emojis" : "☘️ 🦦 🪐 🌿 🧉",
+            "answers" : [
+                {
+                    "answerA" : "☘️",
+                    "answerB" : "🦦",
+                    "answerC" : "🪐",
+                    "answerD" : "🌿",
+                    "answerE" : "🧉"
+                }
+            ],
+            "answer" : ["b", "c", "e"]
+        },
+        {
+            "type" : "radio",
+            "question" : "Select emojis that released in 2019",
+            "emojis" : "🧄 🧹 🦪 💅 🧶",
+            "answers" : [
+                {
+                    "answerA" : "🧄",
+                    "answerB" : "🪐",
+                    "answerC" : "🦪",
+                    "answerD" : "💅",
+                    "answerE" : "🩸"
+                }
+            ],
+            "answer" : ["a", "c", "e"]
+        },
+        {
+            "type" : "radio",
             "question" : "Select emojis with bubble in their name.",
-            "emojis" : "",
+            "emojis" : "👁️‍🗨️ 🗨️ 💬 💭 🗯️",
             "answers" : [
                 {
                     "answerA" : "👁️‍🗨️",
@@ -390,22 +435,52 @@
                     "answerE" : "🗯️"
                 }
             ],
-            "answer" : "8"
+            "answer" : ["a", "b", "e"]
         },
         {
             "type" : "radio",
-            "question" : "Select emojis which start with 'man'.",
-            "emojis" : "",
+            "question" : "Select emojis that released in 2018",
+            "emojis" : "🧽 🥶 🧩 🧂 🥴",
             "answers" : [
                 {
-                    "answerA" : "👰‍♂️",
-                    "answerB" : "🧏‍♂️",
-                    "answerC" : "🧕",
-                    "answerD" : "👳‍♂️",
-                    "answerE" : "👨‍🎨"
+                    "answerA" : "🧽",
+                    "answerB" : "🥶",
+                    "answerC" : "🧩",
+                    "answerD" : "🧂",
+                    "answerE" : "🥴"
                 }
             ],
-            "answer" : "10"
+            "answer" : ["a", "b", "c", "d", "e"]
+        },
+        {
+            "type" : "radio",
+            "question" : "Select emojis that released in 2018",
+            "emojis" : "🥵 🧿 🧈 🧫 🇺🇳",
+            "answers" : [
+                {
+                    "answerA" : "🥵",
+                    "answerB" : "🧿",
+                    "answerC" : "🧈",
+                    "answerD" : "🧫",
+                    "answerE" : "🇺🇳"
+                }
+            ],
+            "answer" : ["a", "b", "d"]
+        },
+        {
+            "type" : "radio",
+            "question" : "Select emojis that released in 2018",
+            "emojis" : "🚹 🧹 😀 💅 🧶",
+            "answers" : [
+                {
+                    "answerA" : "🚹",
+                    "answerB" : "🧹",
+                    "answerC" : "😀",
+                    "answerD" : "💅",
+                    "answerE" : "🧶"
+                }
+            ],
+            "answer" : ["b", "e"]
         }
     ]
 }

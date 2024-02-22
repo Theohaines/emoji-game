@@ -41,7 +41,7 @@ const incorrectSFX = new Audio("/media/incorrectSFX.wav");
 
 //Misc stuff
 let gamestatus = true;
-let holdAnswer = 0;
+let holdAnswer = [];
 let sfxIsMuted = false;
 const sfxToggleText = document.getElementById("sfxToggleText");
 
@@ -76,11 +76,11 @@ function loadNewQuestion(data){
         multiAnswerForm.style.display = "none";
         textAnswerForm.style.display = "none";
         radioAnswerForm.style.display = "flex";
-        radioA.textContent = "1. " + questionJSON.answers[0].answerA;
-        radioB.textContent = "2. " + questionJSON.answers[0].answerB;
-        radioC.textContent = "3. " + questionJSON.answers[0].answerC;
-        radioD.textContent = "4. " + questionJSON.answers[0].answerD;
-        radioE.textContent = "5. " + questionJSON.answers[0].answerE;
+        radioA.textContent = "A: " + questionJSON.answers[0].answerA;
+        radioB.textContent = "B: " + questionJSON.answers[0].answerB;
+        radioC.textContent = "C: " + questionJSON.answers[0].answerC;
+        radioD.textContent = "D: " + questionJSON.answers[0].answerD;
+        radioE.textContent = "E: " + questionJSON.answers[0].answerE;
     }
 
     questionText.textContent = questionJSON.question;
@@ -147,13 +147,15 @@ function toggleRadio(id, ref){
     var element = document.getElementById(id);
     if (element.style.backgroundColor == "rgb(210, 212, 219)"){
         element.style.backgroundColor = "#666666";
-        holdAnswer += ref;
+        holdAnswer.push(ref);
     } else {
         element.style.backgroundColor = "rgb(210, 212, 219)";
-        holdAnswer -= ref;
+        
+        var index = holdAnswer.indexOf(ref);
+        if (index > -1) {
+            holdAnswer.splice(index, 1);
+        }
     }
-
-    console.log(holdAnswer.toString());
 }
 
 function resetRadio(){
@@ -162,6 +164,7 @@ function resetRadio(){
     radioThree.style.backgroundColor = "#D2D4DB";
     radioFour.style.backgroundColor = "#D2D4DB";
     radioFive.style.backgroundColor = "#D2D4DB";
+    holdAnswer = [];
 }
 
 function updateScore(){
