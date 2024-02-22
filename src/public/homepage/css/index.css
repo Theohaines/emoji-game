@@ -8,6 +8,12 @@
     color: #232323;
 }
 
+.prevent-select {
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10 and IE 11 */
+    user-select: none; /* Standard syntax */
+}
+
 .noto-emoji{
     font-family: "Noto Emoji", sans-serif;
     font-optical-sizing: auto;
@@ -29,6 +35,11 @@ body {
     justify-content: baseline;
     background-color: #D2D4DB;
     justify-content: space-between;
+    align-items: center;
+}
+
+.nav-right {
+    height: 100%;
 }
 
 .donation-banner {

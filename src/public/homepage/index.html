@@ -9,14 +9,17 @@
 <body>
     <div class="navbar">
         <h1>Emoji game</h1>
-        <button class="noto-emoji small-button" onclick="toggleElementVisibility('optionContainer'); toggleElementVisibility('answerFormContainer')">options ⚙️</button>
+        <div class="nav-right">
+            <button class="noto-emoji small-button" onclick="toggleElementVisibility('optionContainer'); toggleElementVisibility('answerFormContainer')">options ⚙️</button>
+            <button class="noto-emoji small-button" onclick="window.location.href='https://theohaines.xyz'">main page 🌐</button>
+        </div>
     </div>
 
     <div class="donation-banner">
         <p>Please consider donating so I can keep these games ad free! <a href="https://ko-fi.com/theohaines">Donate here.</a></p>
     </div>
 
-    <div class="container-of-everything">
+    <div class="container-of-everything prevent-select">
         <div class="main-game-element">
             <h1 id="questionText">[QUESTION]</h1>
             <div class="divider"></div>

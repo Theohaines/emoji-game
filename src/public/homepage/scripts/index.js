@@ -42,7 +42,7 @@ const incorrectSFX = new Audio("/media/incorrectSFX.wav");
 //Misc stuff
 let gamestatus = true;
 let holdAnswer = 0;
-let sfxIsMuted = localStorage.getItem("sfxMuted");
+let sfxIsMuted = false;
 const sfxToggleText = document.getElementById("sfxToggleText");
 
 function getNewQuestion(){
@@ -218,21 +218,27 @@ function toggleElementVisibility(elementid){
 }
 
 function toggleSfxMute(){
-    if(localStorage.getItem("sfxMuted")){
-        console.log("flase")
-        localStorage.setItem("sfxMuted", false);
+    if(sfxIsMuted == true){
+        sfxToggleText.textContent = "sfx: 🔊";
         sfxIsMuted = false;
+        localStorage.setItem("sfxMuted", false);
     } else {
-        console.log("tre")
-        localStorage.setItem("sfxMuted", true);
+        sfxToggleText.textContent = "sfx: 🔇";
         sfxIsMuted = true;
+        localStorage.setItem("sfxMuted", true);
     }
 }
 
 function initialise(){
+    sfxIsMuted = localStorage.getItem("sfxMuted");
+    if(sfxIsMuted == true){
+        sfxToggleText.textContent = "sfx: 🔊";
+    } else {
+        sfxToggleText.textContent = "sfx: 🔇";
+    }
     multiAnswerForm.style.display = "none";
     textAnswerForm.style.display = "none";
-    radioAnswerForm.style.display = "none";
+    radioAnswerForm.style.display = "none"; 
     getNewQuestion();
     startTimer();
 }
