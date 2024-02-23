@@ -232,6 +232,26 @@ function toggleSfxMute(){
     }
 }
 
+function toggleSystemEmojis(){
+    var s = document.styleSheets[0];
+
+    if (localStorage.getItem("systemEmojis") == "true"){
+        localStorage.setItem("systemEmojis", "false");
+        s.insertRule(".noto-emoji { font-family: 'Noto Emoji' }");
+    } else {
+        localStorage.setItem("systemEmojis", "true");
+        s.deleteRule("noto-emoji", 0);
+    }
+}
+
+function changeStylesheetRule(stylesheet, selector, property, value) {
+	selector = selector.toLowerCase();
+	property = property.toLowerCase();
+	value = value.toLowerCase();
+  
+	stylesheet.insertRule(selector + ` { ` + property + `: ` + value + `; }`, styleSheet.cssRules.length);
+}
+
 function initialise(){
     sfxIsMuted = localStorage.getItem("sfxMuted");
     if(sfxIsMuted == true){
